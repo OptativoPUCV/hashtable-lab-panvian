@@ -51,6 +51,7 @@ void insertMap(HashMap * map, char * key, void * value) {
     p++;
     if(p>map->capacity) p=0;
   }
+  return ;
   strcpy(c->key,key);
   map->buckets[p]=c;
 }
