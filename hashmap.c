@@ -48,11 +48,11 @@ void insertMap(HashMap * map, char * key, void * value) {
   unsigned long p=hash(key,map->capacity);
   struct Pair *c=(struct Pair*) malloc(sizeof(struct Pair));
   int t=p;
+  return;
   while(map->buckets[p]!=NULL && is_equal(map->buckets[p]->key,key)!=0){
     p++;
     if(p>map->capacity) p=0;
     if(p==t) break;
-    return;
   }
   strcpy(c->key,key);
   map->buckets[p]=c;
