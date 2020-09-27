@@ -273,3 +273,9 @@ Sun Sep 27 00:46:33 UTC 2020:
  tests:  2|5
 total_score: 20/70
 fec64be
+Sun Sep 27 00:46:55 UTC 2020: 
+ hashmap.c | 5 ++++-
+ 1 file changed, 4 insertions(+), 1 deletion(-)
+ tests:  4|5
+total_score: 20/70
+1f45f68

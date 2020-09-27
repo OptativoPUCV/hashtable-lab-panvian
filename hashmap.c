@@ -47,7 +47,10 @@ int is_equal(void* key1, void* key2){
 void insertMap(HashMap * map, char * key, void * value) {
   unsigned long p=hash(key,map->capacity);
   struct Pair *c=(struct Pair*) malloc(sizeof(struct Pair));
-
+  while(map->buckets[p]!=NULL && is_equal(map->buckets[p]->key,key)==0){
+    p++;
+    if(p>map->capacity) p=0;
+  }
   c->key=key;
   c->value=value;
   map->size++;
