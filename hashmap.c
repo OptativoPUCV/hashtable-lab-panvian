@@ -100,9 +100,9 @@ void * searchMap(HashMap * map,  char * key) {
   return NULL;
 }
 
-void * firstMap(HashMap * map) {
+void * firstMap(HashMap * map) {  //si el mapa esta vacio no sirve
   unsigned long p=0;
-  while(map->buckets[p]==NULL) { //si el mapa esta vacio no sirve
+  while(map->buckets[p]==NULL || map->buckets[p]->key==NULL) {
     p++;
   }  
   return map->buckets[p]->value;  
