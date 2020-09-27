@@ -101,7 +101,11 @@ void * searchMap(HashMap * map,  char * key) {
 }
 
 void * firstMap(HashMap * map) {
-    return NULL;
+  unsigned long p=0;
+  while(map->buckets[p]==NULL) { //si el mapa esta vacio no sirve
+    p++;
+  }  
+  return map->buckets[p]->value;  
 }
 
 void * nextMap(HashMap * map) {
