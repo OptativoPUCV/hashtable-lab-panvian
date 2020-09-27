@@ -112,8 +112,9 @@ void * firstMap(HashMap * map) {  //si el mapa esta vacio no sirve
 
 void * nextMap(HashMap * map) {
   int p=map->current+1;
-  if(map->buckets[p]==NULL || map->buckets[p]->key==NULL) {
-    return NULL;
+  while(map->buckets[p]==NULL || map->buckets[p]->key==NULL) {
+    p++;
+    if(p==map->capacity) p=0;
   }
   map->current=p;
   return map->buckets[p]->value;
