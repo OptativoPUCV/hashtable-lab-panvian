@@ -49,7 +49,7 @@ void insertMap(HashMap * map, char * key, void * value) {
   struct Pair *c=(struct Pair*) malloc(sizeof(struct Pair));
   while(map->buckets[p]!=NULL && is_equal(map->buckets[p]->key,key)==0){
     p++;
-    if(p>map->capacity) p=0;
+    if(p>map->capacity) p=1;
   }
   c->key=key;
   c->value=value;
