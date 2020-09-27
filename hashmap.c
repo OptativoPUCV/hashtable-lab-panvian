@@ -53,6 +53,7 @@ void insertMap(HashMap * map, char * key, void * value) {
   }
   c->key=key;
   c->value=value;
+  map->size++;
   map->buckets[p]=c;
 }
 
