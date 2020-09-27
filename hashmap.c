@@ -81,7 +81,7 @@ void eraseMap(HashMap * map,  char * key) {
 void * searchMap(HashMap * map,  char * key) {   
   unsigned long p=hash(key,map->capacity);
   do {
-    if(key==map->buckets[p]->key) {
+    if(is_equal(map->buckets[p]->key,key)==1) {
       return map->buckets[p]->value;
     }
     p++;
