@@ -76,13 +76,18 @@ HashMap * createMap(long capacity) {
 
 void eraseMap(HashMap * map,  char * key) {    
 
-
 }
 
 void * searchMap(HashMap * map,  char * key) {   
-
-
-    return NULL;
+  unsigned long p=hash(key,map->capacity);
+  do {
+    if(key==map->buckets[p]->key) {
+      return map->buckets[p]->value;
+    }
+    p++;
+    if(p==map->capacity) p=0;
+  }while(map->buckets[p]->key!=NULL);
+  return NULL;
 }
 
 void * firstMap(HashMap * map) {

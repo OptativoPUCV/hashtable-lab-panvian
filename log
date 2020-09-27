@@ -285,3 +285,8 @@ Sun Sep 27 00:49:40 UTC 2020:
  tests:  5|4
 total_score: 30/70
 3823aa7
+Sun Sep 27 02:31:46 UTC 2020: 
+ hashmap.c | 10 ++++++++--
+ 1 file changed, 8 insertions(+), 2 deletions(-)
+ tests:  0|0
+bade0be
