@@ -82,12 +82,14 @@ void * searchMap(HashMap * map,  char * key) {
   unsigned long p=hash(key,map->capacity);
   do {
     if(is_equal(map->buckets[p]->key,key)==1) {
+      map->current=p;
       return map->buckets[p]->value;
     }
     p++;
     if(p==map->capacity) p=0;
   }while(map->buckets[p]->key!=NULL);
   return NULL;
+
 }
 
 void * firstMap(HashMap * map) {
