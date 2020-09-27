@@ -112,6 +112,5 @@ void * firstMap(HashMap * map) {  //si el mapa esta vacio no sirve
 
 void * nextMap(HashMap * map) {
   int p=map->current++;
-  map->current=p;
   return map->buckets[p]->value;
 }
