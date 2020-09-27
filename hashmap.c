@@ -114,7 +114,7 @@ void * nextMap(HashMap * map) {
   int p=map->current+1;
   while(map->buckets[p]==NULL || map->buckets[p]->key==NULL) {
     p++;
-    if(p==map->capacity) return NULL;
+    if(map->buckets[p]==NULL || map->buckets[p]->key==NULL) return NULL;
   }
   map->current=p;
   return map->buckets[p]->value;
