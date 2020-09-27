@@ -102,7 +102,7 @@ void * searchMap(HashMap * map,  char * key) {
 
 void * firstMap(HashMap * map) {  //si el mapa esta vacio no sirve
   unsigned long p=0;
-  while(map->buckets[p]==NULL) {
+  while(map->buckets[p]==NULL || map->buckets[p]->key==NULL) {
     p++;
   }
   map->current=p;  
